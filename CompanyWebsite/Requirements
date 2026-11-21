@@ -1,0 +1,518 @@
+Here is a refined, comprehensive prompt you can use with an AI coding assistant to generate the project:
+
+---
+
+# AI Development Prompt: BizProfile
+
+## Project Name
+
+**BizProfile**
+
+## Objective
+
+Develop a modern, professional, responsive business company website named **BizProfile** using **PHP 8.x** and **MySQL**. The website should be fast, secure, SEO-friendly, mobile responsive, and easy to manage through a comprehensive admin panel.
+
+The existing website (**datachron.in**) is outdated and unattractive. Create a completely new, modern corporate website with an elegant UI/UX suitable for an IT company, software company, technology firm, consulting company, or digital solutions provider.
+
+---
+
+# Technology Stack
+
+* PHP 8+
+* MySQL
+* HTML5
+* CSS3
+* Bootstrap 5
+* JavaScript
+* jQuery
+* AJAX
+* Font Awesome
+* CKEditor for page editing
+* PHPMailer for email
+* MVC folder structure (preferred)
+
+---
+
+# Project Structure
+
+```
+BizProfile/
+
+admin/
+assets/
+css/
+js/
+images/
+uploads/
+includes/
+config/
+pages/
+products/
+themes/
+api/
+database/
+logs/
+index.php
+.htaccess
+```
+
+The code should be clean, modular, and well structured.
+
+---
+
+# Design Requirements
+
+Design should look like a premium business website.
+
+Features:
+
+* Modern Hero Banner
+* Animated Sections
+* Professional Color Palette
+* Glassmorphism or Minimal UI
+* Smooth Scrolling
+* Scroll Animations
+* Icons
+* Cards
+* Responsive Layout
+* Sticky Header
+* Professional Footer
+* Contact CTA
+* WhatsApp Floating Button
+* Back To Top Button
+
+---
+
+# Mobile Friendly
+
+Website must be
+
+* Fully Responsive
+* Mobile First
+* Tablet Friendly
+* Desktop Friendly
+
+Compatible with
+
+* Chrome
+* Edge
+* Firefox
+* Safari
+
+---
+
+# Theme System
+
+Create **5 Built-in Themes**
+
+Examples:
+
+1. Blue Corporate
+2. Dark Professional
+3. Green Business
+4. Orange Startup
+5. Purple Modern
+
+Admin can switch themes with one click.
+
+---
+
+# Admin Panel
+
+Create a complete Admin Dashboard.
+
+Dashboard should allow:
+
+### Website Settings
+
+* Company Name
+* Logo
+* Favicon
+* Footer
+* Address
+* Phone
+* Email
+* Social Media Links
+* Google Map
+* Theme Selection
+* Homepage Banner
+
+---
+
+### CMS
+
+Editable Pages
+
+* Home
+* About
+* Services
+* Products
+* Clients
+* Careers
+* Contact
+* Privacy Policy
+* Terms
+* Custom Pages
+
+Use Rich Text Editor (CKEditor).
+
+---
+
+### Product Management
+
+Admin can
+
+* Add Product
+* Edit Product
+* Delete Product
+* Product Category
+* Product Images
+* Multiple Images
+* Product PDF
+* Featured Product
+* Product Status
+
+---
+
+### Product Release / News
+
+Manage
+
+* Product Releases
+* News
+* Announcements
+* Events
+* Updates
+
+---
+
+### Enquiry Management
+
+Website visitors can submit enquiries.
+
+Admin can
+
+* View
+* Reply
+* Delete
+* Export CSV
+
+---
+
+### Feedback Management
+
+Visitors can submit feedback.
+
+Admin can
+
+* View
+* Approve
+* Reject
+* Delete
+
+---
+
+### Gallery Management
+
+Admin can upload
+
+* Images
+* Albums
+* Videos
+
+---
+
+### Client Management
+
+Add
+
+* Client Logos
+* Testimonials
+* Reviews
+
+---
+
+### Team Management
+
+Manage
+
+* Directors
+* Staff
+* Management Team
+
+---
+
+### Career Module
+
+Admin can
+
+* Add Jobs
+* Receive Resume
+* Download Resume
+
+---
+
+### Slider Management
+
+Manage homepage sliders
+
+* Add
+* Edit
+* Delete
+* Sort Order
+
+---
+
+### Menu Manager
+
+Admin can
+
+* Add Menu
+* Remove Menu
+* Rearrange Menu
+
+---
+
+### Footer Manager
+
+Admin can edit
+
+* Copyright
+* Links
+* Quick Links
+* Contact Info
+* Social Icons
+
+---
+
+### SEO Manager
+
+Each page should have
+
+* Meta Title
+* Meta Description
+* Keywords
+* Open Graph Tags
+* Canonical URL
+* Schema.org Markup
+
+---
+
+### User Management
+
+Admin Roles
+
+* Super Admin
+* Admin
+* Editor
+
+Permissions based.
+
+---
+
+### Backup System
+
+Admin can
+
+* Backup Database
+* Download Backup
+* Restore Backup
+
+---
+
+### Media Manager
+
+Upload
+
+* Images
+* PDFs
+* Videos
+* Documents
+
+---
+
+### Contact Form
+
+Fields
+
+* Name
+* Company
+* Phone
+* Email
+* Subject
+* Message
+
+Store in database and send email notification.
+
+---
+
+### Newsletter
+
+Visitors can subscribe.
+
+Admin can
+
+* Export Emails
+* Send Newsletter
+
+---
+
+### Search
+
+Global website search.
+
+---
+
+### Visitor Counter
+
+Dashboard should display
+
+* Total Visitors
+* Daily Visitors
+* Monthly Visitors
+* Online Users
+
+---
+
+### Analytics Ready
+
+Support
+
+* Google Analytics
+* Google Tag Manager
+
+---
+
+# Frontend Pages
+
+* Home
+* About Us
+* Services
+* Products
+* Product Details
+* Product Releases
+* Clients
+* Gallery
+* Careers
+* Testimonials
+* Blog/News
+* Contact Us
+* FAQ
+* Privacy Policy
+* Terms & Conditions
+* Sitemap
+
+---
+
+# Homepage Sections
+
+* Hero Banner
+* About Company
+* Services
+* Why Choose Us
+* Featured Products
+* Product Categories
+* Company Statistics
+* Latest Product Releases
+* Testimonials
+* Clients
+* Latest News
+* Contact CTA
+* Google Map
+* Footer
+
+---
+
+# Security
+
+Implement
+
+* SQL Injection Protection
+* XSS Protection
+* CSRF Protection
+* Secure Login
+* Password Hashing
+* Session Security
+* Input Validation
+* File Upload Validation
+
+---
+
+# Performance
+
+* Optimized Images
+* Lazy Loading
+* Minified CSS
+* Minified JS
+* Browser Cache
+* Fast Loading
+
+---
+
+# Database
+
+Use MySQL with proper relational tables.
+
+Include tables for
+
+* Users
+* Website Settings
+* Pages
+* Products
+* Product Categories
+* Product Images
+* Product Releases
+* Testimonials
+* Clients
+* Gallery
+* Careers
+* Job Applications
+* Enquiries
+* Feedback
+* Newsletter
+* Visitors
+* Themes
+* Sliders
+* Menus
+* SEO
+* Media
+* Logs
+
+Provide complete SQL schema with sample data.
+
+---
+
+# Additional Features
+
+* WhatsApp Chat Button
+* Live Chat Ready
+* Dark Mode Support
+* Breadcrumb Navigation
+* FAQ Section
+* Download Center
+* Document Library
+* Multi-language Ready
+* Email Templates
+* Print-Friendly Pages
+* XML Sitemap Generation
+* Robots.txt Generator
+* 404 Error Page
+* Maintenance Mode
+
+---
+
+# Deliverables
+
+Generate a complete production-ready PHP and MySQL project that includes:
+
+1. Clean, modular, and well-documented source code.
+2. Complete MySQL database schema (`bizprofile.sql`) with sample data.
+3. Secure admin panel with role-based authentication.
+4. Five built-in switchable themes.
+5. Responsive frontend optimized for desktop, tablet, and mobile.
+6. SEO-friendly URLs and metadata management.
+7. Installation wizard with automatic database configuration.
+8. `.env` or configuration file for database and mail settings.
+9. User documentation covering installation, configuration, and administration.
+
+The final result should be significantly more modern, visually appealing, and feature-rich than the current **datachron.in** website, following current corporate web design trends with a polished user experience, strong performance, and enterprise-grade maintainability.

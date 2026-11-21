@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /storage/
+Disallow: /includes/
+
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 10
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 10

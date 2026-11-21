@@ -1,0 +1,258 @@
+<div class="pricing-info-page">
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: #1a365d; min-height: 70vh; display: flex; align-items: center;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero-content text-white">
+                        <div class="badge mb-4 px-4 py-2 rounded-pill" style="background: #c9a227; color: white; font-size: 0.875rem; letter-spacing: 0.5px;">
+                            Pricing Plans
+                        </div>
+                        <h1 class="hero-title fw-bold mb-4" style="font-size: 2.5rem; letter-spacing: -0.5px; line-height: 1.2;">Select Your Ideal Plan</h1>
+                        <p class="hero-subtitle mb-5" style="font-size: 1rem; opacity: 0.85; line-height: 1.7; letter-spacing: 0.25px;">Flexible software development and consulting pricing solutions designed to scale with your organization. Begin with a complimentary trial and upgrade as your requirements evolve.</p>
+                        <div class="hero-actions">
+                            <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" [routerLink]="['/trial']" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                                Start Free Trial
+                            </button>
+                            <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" [routerLink]="['/contact']" style="background: rgba(255,255,255,0.1); color: white; border: 2px solid rgba(255,255,255,0.3);">
+                                Schedule Demo
+                            </button>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="hero-features mt-5">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fw-medium">No Hidden Fees</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fw-medium">Cancel Anytime</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fw-medium">24/7 Support</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
+                             alt="Pricing Plans"
+                             class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Selection Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3 text-gradient" style="font-size: 2rem; letter-spacing: -0.25px; line-height: 1.3;">Select Your Service Solution</h2>
+                <p class="lead text-muted">Choose the software development service that aligns with your business requirements</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Software Tabs -->
+                    <div class="feature-card">
+                        <div class="p-4">
+                            <div class="nav nav-pills d-flex flex-wrap justify-content-center gap-2" role="tablist">
+                                <ng-template ngFor let-software [ngForOf]="lookups.softwares" let-i="index">
+                                    <button class="nav-link"
+                                            [class.active]="activeSoftware?.code == software.code"
+                                            [class.bg-primary]="activeSoftware?.code == software.code"
+                                            [class.text-white]="activeSoftware?.code == software.code"
+                                            (click)="showBySoftware(software)"
+                                            type="button">
+                                        <i class="fa fa-box me-2"></i>{{software.code}}
+                                    </button>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Comparison Table -->
+                    <div class="feature-card">
+                        <div class="p-4">
+                            <div class="text-center mb-4">
+                                <h3 class="fw-bold text-gradient" style="font-size: 2rem; letter-spacing: -0.25px; line-height: 1.3;">Plan Comparison Overview</h3>
+                                <p class="text-muted">Evaluate features across different licensing tiers</p>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="feature-icon">
+                                                        <i class="fa fa-list"></i>
+                                                    </div>
+                                                    <span class="fw-bold">Features</span>
+                                                </div>
+                                            </th>
+                                            <ng-template ngFor let-licenseType [ngForOf]="software.licenseTypes" let-i="index">
+                                                <th class="text-center">
+                                                    <div class="feature-icon">
+                                                        <i class="fa fa-cube"></i>
+                                                    </div>
+                                                    <div class="fw-bold">
+                                                        <h6 class="text-uppercase">{{licenseType.name}}</h6>
+                                                    </div>
+                                                </th>
+                                            </ng-template>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ng-template ngFor let-row [ngForOf]="software.licensingFeatures" let-i="index">
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="feature-icon">
+                                                            <i class="fa fa-check"></i>
+                                                        </div>
+                                                        <span class="fw-bold">{{ row.name }}</span>
+                                                    </div>
+                                                </td>
+                                                <ng-template ngFor let-feature [ngForOf]="row?.softwareLicenseFeatures" let-i="index">
+                                                    <td class="text-center">
+                                                        <div class="feature-icon">
+                                                            <i class="fa fa-star icon-success"></i>
+                                                        </div>
+                                                        <span class="badge">{{ feature.value }}</span>
+                                                    </td>
+                                                </ng-template>
+                                            </tr>
+                                        </ng-template>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- No Features Message -->
+                            <div class="text-center py-5" *ngIf="!(software.licensingFeatures && software.licensingFeatures.length)">
+                                <div class="feature-card">
+                                    <div class="p-5">
+                                        <div class="feature-icon">
+                                            <i class="fa fa-clock fa-2x"></i>
+                                        </div>
+                                        <h4 class="feature-title" style="font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Plan Under Review</h4>
+                                        <p class="feature-description">We're currently updating our pricing plans. Please check back soon or contact us for more information.</p>
+                                        <button class="btn rounded-pill px-3 py-1 fw-bold" [routerLink]="['/contact']" style="background: #1a365d; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                                            Contact Sales
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-padding bg-light" *ngIf="software.licensingFeatures && software.licensingFeatures.length">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-gradient" style="font-size: 2rem; letter-spacing: -0.25px; line-height: 1.3;">Advantages of Our Pricing Model</h2>
+                <p class="lead text-muted">Scalable software solutions designed for sustainable business growth</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fa fa-dollar-sign fa-2x"></i>
+                        </div>
+                        <h4 class="feature-title" style="font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Transparent Pricing Structure</h4>
+                        <p class="feature-description">Clear, straightforward pricing with no hidden costs or unexpected charges for software development services.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center h-100">
+                        <div class="feature-icon icon-success">
+                            <i class="fa fa-arrows-alt fa-2x"></i>
+                        </div>
+                        <h4 class="feature-title" style="font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Scalable Solutions</h4>
+                        <p class="feature-description">Begin with essential features and seamlessly expand your software as your organization grows.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center h-100">
+                        <div class="feature-icon icon-accent">
+                            <i class="fa fa-headset fa-2x"></i>
+                        </div>
+                        <h4 class="feature-title" style="font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Dedicated Support</h4>
+                        <p class="feature-description">Access expert technical assistance whenever needed with our committed development support team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3 text-gradient" style="font-size: 2rem; letter-spacing: -0.25px; line-height: 1.3;">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Common questions about our software development pricing</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="faq-card">
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">Can I change service plans anytime?</h5>
+                        <p class="text-muted">Yes, you can upgrade or downgrade your software development plan at any time. Changes take effect at the next billing cycle.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-card">
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">Is there a free trial?</h5>
+                        <p class="text-muted">Yes! All software development plans come with a 14-day free trial. No credit card required to start.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-card">
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">What payment methods do you accept?</h5>
+                        <p class="text-muted">We accept all major credit cards, PayPal, and bank transfers for enterprise software development contracts.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-card">
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">Do you offer discounts?</h5>
+                        <p class="text-muted">Yes, we offer discounts for annual billing, long-term contracts, and non-profit organizations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section bg-primary text-white py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="fw-bold mb-4" style="font-size: 2rem; letter-spacing: -0.25px; line-height: 1.3;">Ready to Get Started?</h2>
+                <p class="lead mb-4">Choose the perfect software development plan for your business needs</p>
+                <div class="cta-buttons d-flex justify-content-center flex-wrap">
+                    <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" [routerLink]="['/trial']" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                        Start Free Trial
+                    </button>
+                    <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" [routerLink]="['/contact']" style="background: rgba(255,255,255,0.1); color: white; border: 2px solid rgba(255,255,255,0.3);">
+                        Schedule Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

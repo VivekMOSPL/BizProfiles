@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" data-beasties-container>
+<head>
+  <meta charset="utf-8">
+  <title>Cavu</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#26437d">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style type="text/css">
+    /* Absolute Center Spinner */
+    .loading {
+      position: fixed;
+      z-index: 999;
+      height: 60px;
+      width: 60px;
+      overflow: show;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    /* Transparent Overlay */
+    .loading:before {
+      content: '';
+      display: block;
+      background-color: rgba(0, 0, 0, 0);
+      border: 5px solid rgba(0, 183, 229, 0.9);
+      opacity: .9;
+      border-right: 5px solid rgba(0, 0, 0, 0);
+      border-left: 5px solid rgba(0, 0, 0, 0);
+      border-radius: 50px;
+      box-shadow: 0 0 35px #2187e7;
+      width: 50px;
+      height: 50px;
+      margin: -30px auto auto auto;
+      -moz-animation: spinPulse 1s infinite ease-in-out;
+      -webkit-animation: spinPulse 1s infinite linear;
+    }
+
+    /* :not(:required) hides these rules from IE9 and below */
+    .loading:not(:required) {
+      /* hide "loading..." text */
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .loading:not(:required):after {
+      content: '';
+      display: block;
+      font-size: 10px;
+
+      background-color: rgba(0, 0, 0, 0);
+      border: 5px solid rgba(0, 183, 229, 0.9);
+      opacity: .9;
+      border-left: 5px solid rgba(0, 0, 0, 0);
+      border-right: 5px solid rgba(0, 0, 0, 0);
+      border-radius: 50px;
+      box-shadow: 0 0 15px #2187e7;
+      width: 30px;
+      height: 30px;
+      margin: -60px 15px;
+      position: relative;
+      -moz-animation: spinoffPulse 1s infinite linear;
+      -webkit-animation: spinoffPulse 1s infinite linear;
+    }
+
+    @-moz-keyframes spinPulse {
+      0% {
+        -moz-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+      }
+
+      50% {
+        -moz-transform: rotate(145deg);
+        opacity: 1;
+      }
+
+      100% {
+        -moz-transform: rotate(-320deg);
+        opacity: 0;
+      }
+    }
+
+    @-moz-keyframes spinoffPulse {
+      0% {
+        -moz-transform: rotate(0deg);
+      }
+
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes spinPulse {
+      0% {
+        -webkit-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+      }
+
+      50% {
+        -webkit-transform: rotate(145deg);
+        opacity: 1;
+      }
+
+      100% {
+        -webkit-transform: rotate(-320deg);
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes spinoffPulse {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    form.submitted input.ng-invalid, input.ng-dirty.ng-invalid {
+      border: 1px solid red;
+    }
+
+    .dnd-drag-start {
+      -moz-transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+      opacity: 0.7;
+      border: 2px dashed #000 !important;
+    }
+
+    .dnd-drag-enter {
+      opacity: 0.7;
+      border: 2px dashed red !important;
+    }
+
+    .dnd-drag-over {
+      border: 2px dashed #000 !important;
+    }
+
+    .dnd-sortable-drag {
+      -moz-transform: scale(0.9);
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+      opacity: 0.7;
+      border: 1px dashed #000 !important;
+    }
+
+    .popover{ max-width: max-content !important; }
+
+    [data-letters]:before {
+      content:attr(data-letters);
+      display:inline-block;
+      font-size:1em;
+      width:2.5em;
+      height:2.5em;
+      line-height:2.5em;
+      text-align:center;
+      border-radius:50%;
+      vertical-align:middle;
+    }
+    .c_100 { width: 100px !important; }
+
+    /*org-header.app-header {
+        height: 1.5rem;
+    }
+
+    org-header~.app {
+        !*height: calc(100% - 1.5rem) !important;*!
+        padding-top: 1.5rem
+    }
+    org-header~.app .app-aside {
+        min-height: calc(100vh - 3.5rem)
+    }
+    .fixed-aside org-header~.app .app-aside>* {
+        max-height: calc(100% - 1.5rem) !important;
+    }
+    .fixed-content org-header~.app .app-aside>*,.is-fullscreen org-header~.app .app-aside>* {
+        max-height: calc(100% - 1.5rem)
+    }
+
+    .fixed-aside .org-header~.app .app-aside>* {
+        max-height: calc(100% - 1.5rem)
+    }*/
+  </style>
+  <style>
+    .ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-placeholder, .ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-value {
+      position: absolute !important;
+    }
+    /*.ng-select .ng-select-container { min-height: 40px !important;}
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+      line-height: 2.5em;
+      min-height: unset !important;
+    }*/
+    /*
+    .ng-select .ng-select-container .ng-value-container {
+      padding: 0.2em 0 !important;
+      border-top: 0.9em solid transparent;
+    }
+    .ng-select .ng-select-container .ng-value-container .ng-placeholder{
+      font-size: 1.1em;
+      opacity: .5;
+    }
+    .ng-select .ng-spinner-loader {
+      bottom: -15px;
+    }
+    .ng-select-multiple .ng-spinner-loader {
+      bottom: 0px;
+    }*/
+    input[type=date],
+    input[type=datetime-local],
+    input[type=month],
+    input[type=time],
+    input[type=text],
+    input, select
+    {
+      height: 25px !important;
+    }
+    .popover-form {
+      max-width: 420px !important;
+      width: 420px;
+    }
+    .popover {
+      pointer-events: auto !important;
+    }
+    /*.ng-select .ng-select-container { min-height: unset;}*/
+    /*.md-input { height: unset;}*/
+    /*.float-label .md-input:not([value=""])~label, .float-label .md-input:valid~label { size: .5rem;}*/
+  </style>
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,:after,:before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent}@-ms-viewport{width:device-width}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}small{font-size:80%}small{font-size:80%;font-weight:400}@-webkit-keyframes progress-bar-stripes{0%{background-position:1rem 0}to{background-position:0 0}}@media print{*,:after,:before{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}html{background:#e2e9f1}body{color:#465a6ed9;font-size:.8rem;line-height:1.6}small{font-size:90%}html{height:100%}body{width:100%;min-height:100vh;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}body{font-size:.8rem;line-height:1.6;background-color:#13416987;width:100%;min-height:100vh;display:flex;flex-direction:column}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}body{font-family:var(--app-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif)}</style><link rel="stylesheet" href="styles-X4AZVMPD.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-X4AZVMPD.css"></noscript></head>
+<body>
+  <app-body></app-body>
+  <div id="appLoader" class="loading" style="display: none;">
+    <small style="padding: 10px;">Loading...</small>
+  </div>
+  <div #popup id="app-popup"></div>
+<link rel="modulepreload" href="chunk-5OWM6GAY.js"><link rel="modulepreload" href="chunk-7F7TYXT7.js"><link rel="modulepreload" href="chunk-WWX6BADO.js"><script src="polyfills-5CFQRCPP.js" type="module"></script><script src="scripts-3L5C44YR.js" defer></script><script src="main-IVE6ZP75.js" type="module"></script></body>
+</html>

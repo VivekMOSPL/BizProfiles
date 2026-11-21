@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         executor="phpunit-await-retry"
+         timeout="120">
+    <php>
+        <ini name="display_errors" value="1"/>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="date.timezone" value="UTC"/>
+        <ini name="precision" value="20"/>
+    </php>
+
+    <phpunit-attributes>
+        <attribute name="cleanupOnWorldClassTearDown" value="false"/>
+    </phpunit-attributes>
+
+    <coverage>
+        <include>
+            <directory suffix=".php">./includes</directory>
+        </include>
+        <exclude>
+            <file>./includes/Controllers/Api/*.php</file>
+        </exclude>
+    </coverage>
+
+    <tests>
+        <testcase name="Database" bootstrap="tests/database_test.php">
+            <directory suffix=".php">./tests/Core</directory>
+            <file>./tests/Core/DatabaseTest.php</file>
+            <file>./tests/Core/SecurityTest.php</file>
+            <file>./tests/Core/ControllerTest.php</file>
+        </testcase>
+
+        <testcase name="Auth" bootstrap="tests/database_test.php">
+            <file>./tests/Controller/AuthTest.php</file>
+            <file>./tests/Controller/AdminTest.php</file>
+        </testcase>
+
+        <testcase name="Controllers" bootstrap="tests/database_test.php">
+            <directory suffix=".php">./tests/Controller</directory>
+        </testcase>
+
+        <testcase name="Integration" bootstrap="tests/database_test.php">
+            <directory suffix=".php">./tests/Integration</directory>
+        </testcase>
+    </tests>
+
+    <phprstest>
+        <testsuite name="BizProfile Tests">
+            <directory suffix=".php">./tests</directory>
+        </testsuite>
+    </phprstest>
+
+    <logging>
+        <log type="coverage-html" target="./reports/coverage/html"/>
+        <log type="coverage-clover" target="./reports/coverage/clover.xml"/>
+        <log type="coverage-text" target="./reports/coverage/text.txt"/>
+        <log type="junit" target="./reports/junit.xml"/>
+        <log type="testdox-html" target="./reports/testdox/html"/>
+        <log type="testdox-text" target="./reports/testdox/text.txt"/>
+    </logging>
+
+    <listeners>
+        <listener class="Symfony\Component\Console\DependencyInjection\ContainerAccessorListener"/>
+        <listener class="Symfony\Component\HttpKernel\DependencyInjection\ResettableServiceHandler"/>
+        <listener class="Symfony\Component\HttpKernel\KernelListenerServiceSubscriber"/>
+        <listener class="Symfony\Component\Messenger\DependencyInjection\ResettableServiceHandler"/>
+        <listener class="Symfony\Component\Mime\Bridge\SymfonyMimeSubscriber"/>
+        <listener class="phpunit\phpunit"/>
+    </listeners>
+
+    <groups>
+        <exclude>
+            <group>performance</group>
+            <group>security</group>
+            <group>integration</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./includes/Core</directory>
+            <directory suffix=".php">./includes/Controllers</directory>
+            <file>./includes/helpers.php</file>
+            <file>./includes/bootstrap.php</file>
+        </whitelist>
+    </filter>
+</phpunit>

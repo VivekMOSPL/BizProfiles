@@ -1,0 +1,278 @@
+<div class="contact-page">
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: #1a365d; min-height: 70vh; display: flex; align-items: center;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero-content text-white">
+                        <div class="badge mb-4 px-4 py-2 rounded-pill" style="background: #c9a227; color: white; font-size: 0.875rem; letter-spacing: 0.5px;">
+                            Contact Us
+                        </div>
+                        <h1 class="hero-title fw-bold mb-4" style="font-size: 2.5rem; letter-spacing: -0.5px; line-height: 1.2;">Contact Our Team</h1>
+                        <p class="hero-subtitle mb-5" style="font-size: 1rem; opacity: 0.85; line-height: 1.7; letter-spacing: 0.25px;">We welcome the opportunity to discuss how our software development and consulting expertise can support your business objectives. Reach out to our team for personalized consultation and technical guidance.</p>
+                        <div class="hero-actions">
+                            <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" (click)="sendDirectEmail()" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                                Send Message
+                            </button>
+                            <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" (click)="scheduleCall()" style="background: rgba(255,255,255,0.1); color: white; border: 2px solid rgba(255,255,255,0.3);">
+                                Call Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1200&q=80"
+                             alt="Contact Us"
+                             class="img-fluid rounded-4 shadow-lg" style="box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="section-padding py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="badge mb-3 px-4 py-2 rounded-pill" style="background: #1a365d; color: white;">
+                    Reach Out Anytime
+                </div>
+                <h2 class="fw-bold mb-3" style="color: #1a365d; font-size: 2rem; letter-spacing: -0.25px; line-height: 1.3;">Connect With Our Experts</h2>
+                <p class="lead text-muted mb-4">Multiple channels available for seamless communication with our dedicated team</p>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center h-100 p-5 bg-white rounded-4 shadow-sm hover:shadow-lg transition-all border-0" style="border-top: 3px solid #1a365d;">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
+                             alt="Email Us"
+                             class="img-fluid rounded-3 mb-4" style="height: 150px; object-fit: cover; width: 100%;">
+                        <h4 class="feature-title fw-bold mb-3" style="color: #1a365d; font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Email Us</h4>
+                        <p class="feature-description text-muted mb-4">Send us a detailed inquiry and our team will respond within one business day with tailored solutions.</p>
+                        <button class="btn rounded-pill px-3 py-1 fw-bold" (click)="sendDirectEmail()" style="background: #1a365d; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                            Send Email
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center h-100 p-5 bg-white rounded-4 shadow-sm hover:shadow-lg transition-all border-0" style="border-top: 3px solid #c9a227;">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
+                             alt="Schedule Call"
+                             class="img-fluid rounded-3 mb-4" style="height: 150px; object-fit: cover; width: 100%;">
+                        <h4 class="feature-title fw-bold mb-3" style="color: #1a365d; font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Schedule Call</h4>
+                        <p class="feature-description text-muted mb-4">Book a consultation call with our experts to discuss your specific requirements and get personalized recommendations.</p>
+                        <button class="btn rounded-pill px-3 py-1 fw-bold" (click)="scheduleCall()" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                            Schedule Call
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center h-100 p-5 bg-white rounded-4 shadow-sm hover:shadow-lg transition-all border-0" style="border-top: 3px solid #64748b;">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
+                             alt="Visit Office"
+                             class="img-fluid rounded-3 mb-4" style="height: 150px; object-fit: cover; width: 100%;">
+                        <h4 class="feature-title fw-bold mb-3" style="color: #1a365d; font-size: 1.25rem; letter-spacing: -0.25px; line-height: 1.3;">Visit Office</h4>
+                        <p class="feature-description text-muted mb-4">Stop by our office for a face-to-face meeting with our team. We're located in the heart of New Delhi, India.</p>
+                        <button class="btn rounded-pill px-3 py-1 fw-bold" style="background: #64748b; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                            Get Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="contact-form-card p-5 bg-white rounded-4 shadow-lg">
+                        <div class="mb-4">
+                            <div class="badge mb-3">
+                                <i class="fa fa-envelope me-2"></i>Get in Touch
+                            </div>
+                            <h3 class="fw-bold mb-2" style="font-size: 1.5rem; letter-spacing: -0.25px; line-height: 1.3;">Send us a Message</h3>
+                            <p class="text-muted">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        </div>
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-semibold">Your Name</label>
+                                <input type="text" class="form-control form-control-lg" id="name" formControlName="name" placeholder="John Doe"
+                                       [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                    Name is required
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email Address</label>
+                                <input type="email" class="form-control form-control-lg" id="email" formControlName="email" placeholder="john@example.com"
+                                       [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Please enter a valid email</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label fw-semibold">Subject</label>
+                                <input type="text" class="form-control form-control-lg" id="subject" formControlName="subject" placeholder="How can we help?"
+                                       [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }">
+                                <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+                                    Subject is required
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-semibold">Message</label>
+                                <textarea class="form-control form-control-lg" id="message" formControlName="message" rows="5" placeholder="Tell us more about your needs..."
+                                          [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"></textarea>
+                                <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+                                    Message is required
+                                </div>
+                            </div>
+                            <button type="submit" class="btn w-100 rounded-pill px-3 py-1 fw-bold" [disabled]="loading" style="background: #1a365d; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                                {{ loading ? 'Sending...' : 'Send Message' }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info-card p-5 bg-white rounded-4 shadow-lg">
+                        <div class="mb-5">
+                            <div class="badge mb-3">
+                                <i class="fa fa-clock me-2"></i>Business Hours
+                            </div>
+                            <h3 class="fw-bold mb-4" style="font-size: 1.5rem; letter-spacing: -0.25px; line-height: 1.3;">When We're Available</h3>
+                            <div class="hours-list">
+                                <div class="hours-item d-flex justify-content-between align-items-center py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <div class="hours-icon me-3 bg-primary bg-opacity-10 rounded-circle p-2">
+                                            <i class="fa fa-calendar-week text-primary"></i>
+                                        </div>
+                                        <span class="fw-medium">Monday - Friday</span>
+                                    </div>
+                                    <span class="fw-bold text-primary">9:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="hours-item d-flex justify-content-between align-items-center py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <div class="hours-icon me-3 bg-success bg-opacity-10 rounded-circle p-2">
+                                            <i class="fa fa-calendar-day text-success"></i>
+                                        </div>
+                                        <span class="fw-medium">Saturday</span>
+                                    </div>
+                                    <span class="fw-bold text-success">10:00 AM - 2:00 PM</span>
+                                </div>
+                                <div class="hours-item d-flex justify-content-between align-items-center py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="hours-icon me-3 bg-danger bg-opacity-10 rounded-circle p-2">
+                                            <i class="fa fa-calendar-times text-danger"></i>
+                                        </div>
+                                        <span class="fw-medium">Sunday</span>
+                                    </div>
+                                    <span class="fw-bold text-danger">Closed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <div class="badge mb-3">
+                                <i class="fa fa-map-marker-alt me-2"></i>Our Location
+                            </div>
+                            <h3 class="fw-bold mb-3" style="font-size: 1.5rem; letter-spacing: -0.25px; line-height: 1.3;">Office Locations</h3>
+                            <div class="location-card mb-4 p-4 bg-light rounded-3">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="location-icon me-3 bg-warning bg-opacity-10 rounded-circle p-2">
+                                        <i class="fa fa-building text-warning"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2" style="font-size: 1.1rem; letter-spacing: 0.25px;">Headquarters</h5>
+                                        <p class="text-muted mb-0">Laxmi Nagar<br>East Delhi, 110092<br>India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-quick-actions">
+                            <button class="btn rounded-pill px-3 py-1 fw-bold w-100 mb-3" (click)="sendDirectEmail()" style="background: #1a365d; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                                Email Us Directly
+                            </button>
+                            <button class="btn rounded-pill px-3 py-1 fw-bold w-100" (click)="scheduleCall()" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                                Schedule a Call
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="badge mb-3">
+                    <i class="fa fa-question-circle me-2"></i>FAQ
+                </div>
+                <h2 class="display-5 fw-bold mb-3 text-gradient">Frequently Asked Questions</h2>
+                <p class="lead text-muted mb-4">Quick answers to common questions about our software services</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="faq-card p-5 bg-white rounded-4 shadow-lg h-100">
+                        <div class="faq-icon mb-4 bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block">
+                            <i class="fa fa-code fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">What software development services do you offer?</h5>
+                        <p class="text-muted">We offer comprehensive custom software development, web and mobile applications, cloud solutions, API development, and IT consulting services tailored to your business needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-card p-5 bg-white rounded-4 shadow-lg h-100">
+                        <div class="faq-icon mb-4 bg-success bg-opacity-10 rounded-circle p-3 d-inline-block">
+                            <i class="fa fa-clock fa-2x text-success"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">How quickly can you start a software project?</h5>
+                        <p class="text-muted">Project timelines vary based on complexity, but we typically begin within 1-2 weeks of project confirmation after requirements gathering.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-card p-5 bg-white rounded-4 shadow-lg h-100">
+                        <div class="faq-icon mb-4 bg-info bg-opacity-10 rounded-circle p-3 d-inline-block">
+                            <i class="fa fa-tools fa-2x text-info"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">Do you offer ongoing software maintenance and support?</h5>
+                        <p class="text-muted">Yes, we provide 24/7 support, maintenance services, and continuous integration to ensure your software runs smoothly and stays up-to-date.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-card p-5 bg-white rounded-4 shadow-lg h-100">
+                        <div class="faq-icon mb-4 bg-warning bg-opacity-10 rounded-circle p-3 d-inline-block">
+                            <i class="fa fa-laptop-code fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="font-size: 1.1rem; letter-spacing: 0.25px;">What technologies do you specialize in?</h5>
+                        <p class="text-muted">We work with modern technologies including React, Angular, Node.js, Python, cloud platforms (AWS, Azure, GCP), and various databases to build scalable solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section bg-primary text-white py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+                <p class="lead mb-4">Contact us today to discuss how our software development and consulting expertise can help transform your business</p>
+                <div class="cta-buttons d-flex justify-content-center flex-wrap">
+                    <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" (click)="sendDirectEmail()" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                        Send Message
+                    </button>
+                    <button class="btn rounded-pill px-3 py-1 fw-bold mx-1" (click)="scheduleCall()" style="background: rgba(255,255,255,0.1); color: white; border: 2px solid rgba(255,255,255,0.3);">
+                        Schedule Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

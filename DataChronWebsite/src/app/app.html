@@ -1,0 +1,127 @@
+<!-- Angular SPA Layout - Software Startup & Consulting Firm -->
+<div class="company-theme">
+  <header class="app-header" style="background: #1a365d; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <!-- Brand -->
+        <a [routerLink]="['/']" class="navbar-brand d-flex align-items-center">
+          <div class="brand-logo">
+            <img src="logo.svg" alt="EnRator Logo" class="brand-image me-2" style="height: 45px; width: auto;">
+            <!-- <span class="brand-text text-white fw-bold" style="font-size: 1.5rem; letter-spacing: 0.5px;">EnRator</span> -->
+          </div>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" (click)="toggleMobileMenu()"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: white; background: rgba(255,255,255,0.1); padding: 0.5rem 0.75rem;">
+          <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'white\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e');"></span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="navbar-collapse collapse" [class.show]="isMobileMenuOpen" id="navbarNav" style="background: #1a365d; border-radius: 8px;">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a [routerLink]="['/home']" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: true }" class="nav-link text-white" (click)="closeMobileMenu()" aria-label="Home page" style="color: white !important; font-weight: 500; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.25px;">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/about']" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: true }" class="nav-link text-white" (click)="closeMobileMenu()" aria-label="About our company" style="color: white !important; font-weight: 500; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.25px;">
+                Our Company
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/vision']" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: true }" class="nav-link text-white" (click)="closeMobileMenu()" aria-label="Our vision and mission" style="color: white !important; font-weight: 500; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.25px;">
+                Vision & Mission
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/pricing']" routerLinkActive="active" class="nav-link text-white" (click)="closeMobileMenu()" aria-label="Pricing information" style="color: white !important; font-weight: 500; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.25px;">
+                Pricing
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/contact']" routerLinkActive="active" class="nav-link text-white" (click)="closeMobileMenu()" aria-label="Contact us" style="color: white !important; font-weight: 500; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.25px;">
+                Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/whywe']" routerLinkActive="active" class="nav-link text-white" (click)="closeMobileMenu()" aria-label="Why choose us" style="color: white !important; font-weight: 500; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.25px;">
+                Why We
+              </a>
+            </li>
+            <li class="nav-item ms-3">
+              <a [routerLink]="['/trial']" routerLinkActive="active" class="btn rounded-pill px-3 py-1 fw-bold mx-1" (click)="closeMobileMenu()" aria-label="Start free trial" style="background: #c9a227; color: white; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                Start Free Trial
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="content-main" id="content-main">
+      <!-- Angular Router Outlet for Component Views -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer" style="background: #0f172a; color: white; padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5 class="fw-bold mb-3" style="color: #c9a227;">EnRator</h5>
+            <p class="mb-3" style="color: rgba(255,255,255,0.7);">Innovative software startup and consulting firm delivering cutting-edge digital solutions, strategic technology partnerships, and expert IT consulting services to transform businesses worldwide.</p>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5 class="fw-bold mb-3" style="color: #c9a227; font-size: 1.1rem; letter-spacing: 0.25px;">Quick Links</h5>
+            <ul style="list-style: none; padding: 0;">
+              <li class="mb-2"><a [routerLink]="['/home']" aria-label="Navigate to home page" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Home</a></li>
+              <li class="mb-2"><a [routerLink]="['/about']" aria-label="Navigate to about us page" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">About Us</a></li>
+              <li class="mb-2"><a [routerLink]="['/vision']" aria-label="Navigate to vision and mission page" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Vision & Mission</a></li>
+              <li class="mb-2"><a [routerLink]="['/whywe']" aria-label="Navigate to why choose us page" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Why Choose Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Industries Served -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5 class="fw-bold mb-3" style="color: #c9a227; font-size: 1.1rem; letter-spacing: 0.25px;">Services</h5>
+            <ul style="list-style: none; padding: 0;">
+              <li class="mb-2"><a href="#" aria-label="Software Development services" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Software Development</a></li>
+              <li class="mb-2"><a href="#" aria-label="IT Consulting services" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">IT Consulting</a></li>
+              <li class="mb-2"><a href="#" aria-label="Digital Transformation services" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Digital Transformation</a></li>
+              <li class="mb-2"><a href="#" aria-label="Cloud Solutions services" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Cloud Solutions</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5 class="fw-bold mb-3" style="color: #c9a227; font-size: 1.1rem; letter-spacing: 0.25px;">Contact Info</h5>
+            <ul style="list-style: none; padding: 0;">
+              <li class="mb-2"><a href="mailto:info@enrator.com" aria-label="Send email to info@enrator.com" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">info@enrator.com</a></li>
+              <li class="mb-2">New Delhi, India</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+        <p class="mb-0" style="color: rgba(255,255,255,0.5);">&copy; 2024 EnRator. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
