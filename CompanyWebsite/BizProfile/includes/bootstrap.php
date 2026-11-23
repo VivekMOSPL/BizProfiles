@@ -71,4 +71,31 @@ require_once __DIR__ . '/Core/Model.php';
 require_once __DIR__ . '/Core/Security.php';
 require_once __DIR__ . '/Core/Theme.php';
 require_once __DIR__ . '/Core/ThemeSelector.php';
-require_once __DIR__ . '/Theme.php';
+require_once __DIR__ . '/Core/InstallationStateService.php';
+require_once __DIR__ . '/Core/SetupGate.php';
+require_once __DIR__ . '/Core/OwnerClaimService.php';
+require_once __DIR__ . '/Core/OtpChallengeService.php';
+require_once __DIR__ . '/Core/MailTransport.php';
+require_once __DIR__ . '/Core/Mail/MailDriverInterface.php';
+require_once __DIR__ . '/Core/Mail/PhpMailerTransport.php';
+require_once __DIR__ . '/Core/Mail/SmtpTransport.php';
+require_once __DIR__ . '/Core/Mail/ApiTransport.php';
+require_once __DIR__ . '/Core/Mail/MailManager.php';
+require_once __DIR__ . '/Core/SetupDraftRepository.php';
+require_once __DIR__ . '/Core/AuthSessionService.php';
+require_once __DIR__ . '/Core/AuditService.php';
+
+if (!function_exists('csrf_field')) {
+    function csrf_field(): string
+    {
+        $token = \BizProfile\Core\Security::generateCsrfToken();
+        return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars($token) . '">';
+    }
+}
+
+if (!function_exists('isLoggedIn')) {
+    function isLoggedIn(): bool
+    {
+        return !empty($_SESSION['user_id'] ?? null);
+    }
+}

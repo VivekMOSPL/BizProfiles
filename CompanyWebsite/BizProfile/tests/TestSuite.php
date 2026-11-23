@@ -2,6 +2,7 @@
 
 namespace BizProfile\Tests;
 
+use PDO;
 use PHPUnit\Framework\TestCase;
 
 /**

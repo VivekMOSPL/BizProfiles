@@ -45,7 +45,6 @@
             <directory suffix=".php">./tests/Integration</directory>
         </testcase>
     </tests>
-
     <phprstest>
         <testsuite name="BizProfile Tests">
             <directory suffix=".php">./tests</directory>
@@ -60,15 +59,6 @@
         <log type="testdox-html" target="./reports/testdox/html"/>
         <log type="testdox-text" target="./reports/testdox/text.txt"/>
     </logging>
-
-    <listeners>
-        <listener class="Symfony\Component\Console\DependencyInjection\ContainerAccessorListener"/>
-        <listener class="Symfony\Component\HttpKernel\DependencyInjection\ResettableServiceHandler"/>
-        <listener class="Symfony\Component\HttpKernel\KernelListenerServiceSubscriber"/>
-        <listener class="Symfony\Component\Messenger\DependencyInjection\ResettableServiceHandler"/>
-        <listener class="Symfony\Component\Mime\Bridge\SymfonyMimeSubscriber"/>
-        <listener class="phpunit\phpunit"/>
-    </listeners>
 
     <groups>
         <exclude>

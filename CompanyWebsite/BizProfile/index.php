@@ -5,10 +5,45 @@ require_once __DIR__ . '/includes/bootstrap.php';
 use BizProfile\Core\Router;
 use BizProfile\Core\Request;
 use BizProfile\Core\Response;
+use BizProfile\Core\InstallationStateService;
+use BizProfile\Core\SetupGate;
 
 $request = new Request();
 $router = new Router($request);
 
+// --- M1 Setup Routes ---
+$router->get('/setup', 'SetupController@index');
+$router->get('/setup/identify', 'SetupController@identify');
+$router->post('/setup/identify', 'SetupController@identify');
+$router->get('/setup/otp/send', 'VerificationController@sendOtp');
+$router->post('/setup/otp/send', 'VerificationController@sendOtp');
+$router->get('/setup/otp/verify', 'VerificationController@verifyOtp');
+$router->post('/setup/otp/verify', 'VerificationController@verifyOtp');
+$router->get('/setup/resume', 'SetupController@resume');
+
+// --- M1 Setup Gate (runs before dispatch) ---
+$stateService = new InstallationStateService();
+$gate = new SetupGate($stateService);
+
+$uri = parse_url($request->getUri(), PHP_URL_PATH);
+$method = $request->getMethod();
+$isOwnerAuthenticated = !empty($_SESSION['owner_authenticated'] ?? false) && !empty($_SESSION['user_id'] ?? null);
+
+$gateResult = $gate->evaluate($uri, $method, $isOwnerAuthenticated);
+
+if ($gateResult['halt'] ?? false) {
+    http_response_code($gateResult['code'] ?? 200);
+    $controllerFile = BASE_PATH . '/admin/setup/' . ($gateResult['view'] ?? 'setup/pending') . '.php';
+    if (file_exists($controllerFile)) {
+        extract($gateResult['data'] ?? []);
+        include $controllerFile;
+    } else {
+        echo 'Setup required.';
+    }
+    exit;
+}
+
+// --- Existing routes ---
 $router->get('/', 'HomeController@index');
 $router->get('/about', 'PageController@about');
 $router->get('/services', 'PageController@services');

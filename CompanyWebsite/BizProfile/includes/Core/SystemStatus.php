@@ -127,7 +127,7 @@ class SystemStatus
             return [
                 'healthy' => $healthy,
                 'critical' => $critical,
-                'message' => "Database operational ({$latency['avg_ms']:.2f}ms avg latency)",
+                'message' => sprintf('Database operational (%.2fms avg latency)', $latency['avg_ms']),
                 'details' => [
                     'latency' => $latency,
                     'table_count' => $tableCount,
@@ -261,7 +261,7 @@ class SystemStatus
         return [
             'healthy' => $healthy,
             'critical' => $critical,
-            'message' => "Cache system OK ({$cacheFiles} files, {$cacheSizeMB:.2f} MB)",
+            'message' => sprintf('Cache system OK (%d files, %.2f MB)', $cacheFiles, $cacheSizeMB),
             'details' => [
                 'cache_files' => $cacheFiles,
                 'cache_size_mb' => $cacheSizeMB,
