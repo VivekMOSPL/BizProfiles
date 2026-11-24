@@ -99,6 +99,15 @@ $router->get('/products-services', 'ProductServiceController@index');
 $router->get('/admin/theme', 'ThemeController@index');
 $router->post('/admin/theme', 'ThemeController@select');
 
+// Questionnaire routes (M2)
+$router->get('/questionnaire', 'QuestionnaireController@index');
+$router->get('/questionnaire/{slug}', 'QuestionnaireController@show');
+$router->post('/questionnaire/{slug}/submit', 'QuestionnaireController@submit');
+$router->get('/admin/questionnaires', 'QuestionnaireController@adminList');
+$router->get('/admin/questionnaires/create', 'QuestionnaireController@adminCreate');
+$router->post('/admin/questionnaires', 'QuestionnaireController@adminStore');
+$router->get('/admin/questionnaires/{id:\d+}/responses', 'QuestionnaireController@adminResponses');
+
 $router->get('/api/v1/products', 'Api\ProductController@index');
 $router->get('/api/v1/products/{id}', 'Api\ProductController@show');
 $router->get('/api/v1/services', 'Api\ServicesController@index');
